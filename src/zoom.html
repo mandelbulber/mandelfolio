@@ -9,7 +9,10 @@
     <link rel="icon" type="image/x-icon" href="/assets/favicon.png">
     <link rel="stylesheet/less" type="text/css" href="styles/zoom.less">
     <script src="https://cdn.jsdelivr.net/npm/less"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+        integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
 </head>
 
 <body>
@@ -52,7 +55,9 @@
 
     <article>
         <h1>Zoom</h1>
+        <video controls muted autoplay loop id="mandelbrot-zoom"></video>
     </article>
+
     <footer>
         <div class="footer-infos">
             Ein Portfolio erstellt von Andrin Eugster und Tim Arnold im Rahmen des Schulmoduls M152.
@@ -67,6 +72,20 @@
             </ul>
         </div>
     </footer>
+
+    <script>
+        var video = document.getElementById('mandelbrot-zoom');
+        var videoSrc = './media/zoom/mandelbrot_zoom_main.m3u8';
+        if (Hls.isSupported()) {
+            var hls = new Hls();
+            hls.loadSource(videoSrc);
+            hls.attachMedia(video);
+        }
+        else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+            video.src = videoSrc;
+        }
+    </script>
+
 </body>
 
 </html>
