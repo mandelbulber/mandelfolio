@@ -55,7 +55,12 @@
 
     <article>
         <h1>Zoom</h1>
-        <video controls muted autoplay loop id="mandelbrot-zoom"></video>
+        <video controls muted autoplay loop id="mandelbrot-zoom">
+            <p>Ihr Browser unterstützt das Video-Tag nicht.</p>
+        </video>
+        <button onclick="switchAudioTrack(0)">switchAudioTrack to 1</button>
+        <button onclick="switchAudioTrack(1)">switchAudioTrack to 2</button>
+        <button onclick="switchAudioTrack(2)">switchAudioTrack to 3</button>
     </article>
 
     <footer>
@@ -76,14 +81,22 @@
     <script>
         var video = document.getElementById('mandelbrot-zoom');
         var videoSrc = './media/zoom/mandelbrot_zoom_main.m3u8';
+        var hls = new Hls();
+
         if (Hls.isSupported()) {
-            var hls = new Hls();
             hls.loadSource(videoSrc);
             hls.attachMedia(video);
+
+            function switchAudioTrack(trackIndex) {
+                if (hls.audioTracks.length > trackIndex) {
+                    hls.audioTrack = trackIndex;
+                }
+            }
         }
         else if (video.canPlayType('application/vnd.apple.mpegurl')) {
             video.src = videoSrc;
         }
+
     </script>
 
 </body>
