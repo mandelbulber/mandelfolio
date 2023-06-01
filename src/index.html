@@ -10,6 +10,7 @@
     <link rel="stylesheet/less" type="text/css" href="styles/index.less">
     <script src="https://cdn.jsdelivr.net/npm/less"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/scripts/index.js"></script>
 </head>
 
 <body>
@@ -51,8 +52,46 @@
     </header>
 
     <article>
-        <h1>Einleitung</h1>
+        <h1>mandelfolio</h1>
+        <p>
+            Willkommen bei Mandelfolio, dem Online-Portfolio für die faszinierende Welt der Mandelbrot-Mengen. Hier
+            entdecken Sie die Geschichte, mathematischen Konzepte und visuellen Darstellungen dieser einzigartigen
+            Objekte. Begleiten Sie uns auf einer Reise der Erkenntnis und lassen Sie sich von den unendlichen
+            Möglichkeiten der Mandelbrot-Mengen begeistern. Tauchen Sie ein und lassen Sie sich von ihrer Schönheit
+            verzaubern. Mandelfolio freut sich, Ihnen diese faszinierende Welt näherzubringen.
+        </p>
+        <video src="media/index/intro.mp4" id="intro-video" class="intro-video" ontimeupdate="updateTimeText()" controls
+            onloadedmetadata="videoLoaded()">
+            <track kind="subtitles" srclang="de" src="media/index/subtitles-german.vtt" default>
+            <track kind="subtitles" srclang="en" src="media/index/subtitles-english.vtt">
+            <track kind="subtitles" srclang="pa" src="media/index/subtitles-punjabi.vtt">
+        </video>
+        <div class="video-controls">
+            <div>
+                <span id="currentTime">0:00</span>
+                <input id="timeline" oninput="setTime(value)" type="range" min="0" max="1" value="0" step="0.0001">
+                <span id="duration">0:00</span>
+            </div>
+            <hr>
+            <div>
+                <div>
+                    <button onclick="playVideo()">Play</button>
+                    <button onclick="pauseVideo()">Pause</button>
+                </div>
+                <div>
+                    <button onclick="scrubBackVideo()">&lt;&lt;</button>
+                    <button onclick="scrubForwardVideo()">&gt;&gt;</button>
+                </div>
+            </div>
+            <br>
+            <div>
+                Wiedergabegeschwindigkeit:
+                <input oninput="setPlaybackRate(value)" type="range" min="0.1" max="5" value="1" step="0.1">
+                <span id="playbackRateIndicator">1x</span>
+            </div>
+        </div>
     </article>
+
     <footer>
         <div class="footer-infos">
             Ein Portfolio erstellt von Andrin Eugster und Tim Arnold im Rahmen des Schulmoduls M152.
