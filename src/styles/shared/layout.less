@@ -10,19 +10,23 @@
 @hamburger-icon-color: #000;
 @hamburger-bg-color: #ffd188;
 
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 2em;
+}
+
 a {
-    color: black;
+    color: #b76e00;
     text-decoration: none;
 
     &:hover {
         color: @link-hover-color;
     }
-}
-
-*,
-*:before,
-*:after {
-    box-sizing: border-box;
 }
 
 body {

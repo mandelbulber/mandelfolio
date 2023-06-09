@@ -50,9 +50,99 @@
         </nav>
     </header>
 
-    <article>
+    <article class="subtitle">
         <h1>Galerie</h1>
+        <p>Die Mandelbrot-Menge beinhaltet viele interessante Orte und kann in verschiedenen Blickwinkeln präsentiert werden.</p>
+
+        <h2>Interessante Orte</h2>
+        <p>
+            Die Mandelbrot-Menge bietet eine unendliche genauigkeit.
+            <br>
+            Bei diesem nicht-wiederholendem Muster sind somit zahlreiche Muster (Fraktale) zu finden.
+            <br>
+            Folgend sind manch interessante Orte aufgezeigt, welche teils als natürliche Muster interpretiert werden können.
+        </p>
+
+        <div class="mandelbrot-locations">
+            <picture>
+                <source media="(max-width: 767px)" srcset="media/gallery/JuliaIslandMiddle.png">
+                <source media="(max-width: 1023px)" srcset="media/gallery/JuliaIslandLeft.png">
+                <img src="media/gallery/JuliaIslandLeft.png" alt="Julia-Insel" sizes="(max-width: 767px) 50px, (max-width: 1023px) 100px, 300px">
+            </picture>
+            <picture>
+                <source media="(max-width: 767px)" srcset="media/gallery/SunMiddle.png">
+                <source media="(max-width: 1023px)" srcset="media/gallery/SunRight.png">
+                <img src="media/gallery/SunMiddle.png" alt="Sonne">
+            </picture>
+            <picture>
+                <source media="(max-width: 767px)" srcset="media/gallery/SeahorseValleyMiddle.png">
+                <source media="(max-width: 1023px)" srcset="media/gallery/SeahorseValleyLeft.png">
+                <img src="media/gallery/SeahorseValleyRight.png" alt="Seepferd-Valley">
+            </picture>
+            <picture>
+                <source media="(max-width: 767px)" srcset="media/gallery/TreeMiddle.png">
+                <source media="(max-width: 1023px)" srcset="media/gallery/TreeRight.png">
+                <img src="media/gallery/TreeLeft.png" alt="Baum">
+            </picture>
+            <picture>
+                <source media="(max-width: 767px)" srcset="media/gallery/TendrilsMiddle.png">
+                <source media="(max-width: 1023px)" srcset="media/gallery/TendrilsLeft.png">
+                <img src="media/gallery/TendrilsMiddle.png" alt="Ranken">
+            </picture>
+            <picture>
+                <source media="(max-width: 767px)" srcset="media/gallery/StarfishMiddle.png">
+                <source media="(max-width: 1023px)" srcset="media/gallery/StarfishRight.png">
+                <img src="media/gallery/StarfishRight.png" alt="Seestern">
+            </picture>
+        </div>
+
+        <h2>Grosses Mandelbrot (Device-Pixel-Ratio)</h2>
+        <p>
+            Folgend ist das gesamte Mandelbrot aufgezeigt.
+            <br>
+            Die Qualität des folgenden Bildes wird abhängig der Device-Pixel-Ratio bestummen.
+            <br>
+            <small>Bild ohne Antialiasing</small>
+        </p>
     </article>
+
+    <img src="media/gallery/MB_500.png" class="large-mandelbrot" alt="Bild eines grossen Mandelbrotes"
+        srcset="media/gallery/MB_4000x.png 3x, media/gallery/MB_2000x.png 2x, media/gallery/MB_1000x.png 1.5x, media/gallery/MB_500x.png 1x">
+
+    <article class="license subtitle">
+        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+            <img alt="Creative Commons Lizenzvertrag" style="border-width:0"
+                src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+        </a>
+        <br />
+        Dieses Werk ist lizenziert unter einer <a rel="license"
+            href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Namensnennung 4.0 International
+            Lizenz</a>.
+
+        <h2>Grosses Mandelbrot (Viewport)</h2>
+        <p>
+            Folgend ist das gesamte Mandelbrot aufgezeigt.
+            <br>
+            Die Qualität des folgenden Bildes wird abhängig der Breite des Viewports (logische Pixel) bestummen.
+            <br>
+            <small>Bild ohne Antialiasing</small>
+        </p>
+    </article>
+
+    <img src="media/gallery/MB_500.png" class="large-mandelbrot" alt="Bild eines grossen Mandelbrotes"
+        srcset="media/gallery/MB_4000w.png 4000w, media/gallery/MB_2000w.png 2000w, media/gallery/MB_1000w.png 1000w, media/gallery/MB_500w.png 500w">
+
+    <article class="license">
+        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+            <img alt="Creative Commons Lizenzvertrag" style="border-width:0"
+                src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+        </a>
+        <br />
+        Dieses Werk ist lizenziert unter einer <a rel="license"
+            href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Namensnennung 4.0 International
+            Lizenz</a>.
+    </article>
+
     <footer>
         <div class="footer-infos">
             Ein Portfolio erstellt von Andrin Eugster und Tim Arnold im Rahmen des Schulmoduls M152.

@@ -1,1 +1,73 @@
 @import "shared/layout";
+
+
+h2 {
+    margin-top: 100px;
+}
+
+.mandelbrot-locations {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: space-between;
+    height: 650px;
+
+    img {
+        width: 300px;
+        height: 300px;
+        box-shadow: 0px 0px 30px 0px @shadow-color;
+        border-radius: 10px;
+    }
+}
+
+.large-mandelbrot {
+    box-shadow: 0px 0px 30px 0px @shadow-color;
+    border-radius: 10px;
+    width: 80%;
+    min-width: 1000px;
+    margin: auto;
+}
+
+article.license {
+    margin-top: 20px;
+}
+
+article.subtitle {
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: @smallScreenSize) {
+    .mandelbrot-locations {
+        height: 1000px;
+    }
+    .large-mandelbrot {
+        width: 90%;
+        min-width: 700px;
+    }
+}
+
+@media screen and (max-width: @tabletSize) {
+    .mandelbrot-locations {
+        height: 2050px;
+
+        img {
+            margin-left: 75px;
+        }
+    }
+    .large-mandelbrot {
+        min-width: 450px;
+    }
+}
+
+@media screen and (max-width: @phoneSize) {
+    .mandelbrot-locations {
+        height: 2050px;
+
+        img {
+            margin-left: 0;
+        }
+    }
+    .large-mandelbrot {
+        min-width: 300px;
+    }
+}
