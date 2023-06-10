@@ -10,6 +10,7 @@
     <link rel="stylesheet/less" type="text/css" href="styles/livestream.less">
     <script src="https://cdn.jsdelivr.net/npm/less"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
 </head>
 
 <body>
@@ -52,6 +53,9 @@
 
     <article>
         <h1>Live-Stream</h1>
+        <video controls muted autoplay id="mandelbrot-livestream">
+            <p>Ihr Browser unterstützt das Video-Tag nicht.</p>
+        </video>
     </article>
     <footer>
         <div class="footer-infos">
@@ -67,6 +71,25 @@
             </ul>
         </div>
     </footer>
+
+    <script>
+        var video = document.getElementById('mandelbrot-livestream');
+        var videoSrc = 'http://134.209.230.5/mandelfolio_livestream.m3u8'; // Todo
+        var config = {
+          liveDurationInfinity: true,
+        }
+        var hls = new Hls(config);
+
+        if (Hls.isSupported()) {
+            hls.loadSource(videoSrc);
+            hls.attachMedia(video);
+        }
+        else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+            video.src = videoSrc;
+        }
+
+    </script>
+
 </body>
 
 </html>
