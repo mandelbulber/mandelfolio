@@ -20,29 +20,27 @@ h2 {
     }
 }
 
-.large-mandelbrot {
-    box-shadow: 0px 0px 30px 0px @shadow-color;
-    border-radius: 10px;
-    width: 80%;
-    min-width: 1000px;
-    margin: auto;
-}
+.large-mandelbrot-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
 
-article.license {
-    margin-top: 20px;
-}
+    .large-mandelbrot {
+        box-shadow: 0px 0px 30px 0px @shadow-color;
+        border-radius: 10px;
 
-article.subtitle {
-    margin-bottom: 20px;
+        &.large-mandelbrot-sizes {
+            min-width: 70vw;
+        }
+    }
 }
 
 @media screen and (max-width: @smallScreenSize) {
     .mandelbrot-locations {
         height: 1000px;
     }
-    .large-mandelbrot {
-        width: 90%;
-        min-width: 700px;
+    .large-mandelbrot-container .large-mandelbrot.large-mandelbrot-sizes {
+        min-width: 80vw;
     }
 }
 
@@ -54,8 +52,8 @@ article.subtitle {
             margin-left: 75px;
         }
     }
-    .large-mandelbrot {
-        min-width: 450px;
+    .large-mandelbrot-container .large-mandelbrot.large-mandelbrot-sizes {
+        min-width: 90vw;
     }
 }
 
@@ -66,8 +64,5 @@ article.subtitle {
         img {
             margin-left: 0;
         }
-    }
-    .large-mandelbrot {
-        min-width: 300px;
     }
 }
